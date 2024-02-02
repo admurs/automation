@@ -5,6 +5,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
+
 import java.util.concurrent.TimeUnit;
 
 public class Driver {
@@ -33,11 +36,10 @@ public class Driver {
         if (driver == null) {
             switch (ConfigReader.getProperty("browser")) {
                 case "chrome":
-
                     //asagideki 3 satirdaki kodlar testleri Headless (Jenkins gibi) kosmak istedigimiz yerlerde aktive edilebilir
                     ChromeOptions options = new ChromeOptions();
-                    options.addArguments("--headless"); // Başsız modu etkinleştir
-                    options.addArguments("--disable-gpu"); // GPU kullanımını devre dışı bırak
+                    //options.addArguments("--headless"); // Başsız modu etkinleştir
+                    //options.addArguments("--disable-gpu"); // GPU kullanımını devre dışı bırak
                     // driver = new ChromeDriver(options); bu satir yorumdan kalkarsa, alt satir yoruma alinirsa headless calisir.
                     driver = new ChromeDriver(new ChromeOptions().addArguments("--remote-allow-origins=*"));
                     break;
@@ -49,6 +51,13 @@ public class Driver {
                     driver = new ChromeDriver(new ChromeOptions().addArguments("--headless=new"));
                     //bu secenekte chrome acilmadan test kosulur
                     break;
+                case "firefox":
+                    driver = new FirefoxDriver();
+                    break;
+                case "safari":
+                    driver = new SafariDriver();
+                    break;
+
                 default:
 
                     driver = new ChromeDriver(new ChromeOptions().addArguments("--remote-allow-origins=*"));
