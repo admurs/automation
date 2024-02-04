@@ -1,12 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="5.245" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Amazon Senaryosu" name="Login" time="5.156">
+<testsuite name="Cucumber" time="27.687" tests="4" skipped="0" failures="0" errors="0">
+<testcase classname="Amazon Senaryosu" name="Login" time="5.136">
 <system-out><![CDATA[
 Given Amazon sitesi açılır..................................................passed
 And Ana sayfanın açıldığı kontrol edilir....................................passed
 And Çerez tercihlerinden Çerezleri kabul et seçilir.........................passed
 And Siteye login olunur.....................................................passed
-When Login işlemi kontrol edilir............................................passed
+Then Login işlemi kontrol edilir............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Amazon Senaryosu" name="Liste oluşturma ve listeye ürün ekleme" time="17.015">
+<system-out><![CDATA[
+Given Hesabım bölümünden “Virgosol Liste” isimli yeni bir liste oluşturulur..passed
+And Arama butonu yanındaki kategoriler tabından bilgisayar seçilir..........passed
+Then Bilgisayar kategorisi seçildiği kontrol edilir.........................passed
+And Arama alanına msi yazılır ve arama yapılır..............................passed
+Then Arama yapıldığı kontrol edilir.........................................passed
+And Arama sonuçları sayfasından 2. sayfa açılır.............................passed
+Then 2. sayfanın açıldığı kontrol edilir....................................passed
+And Sayfadaki 2. ürün oluşturulan “Virgosol Liste” listesine eklenir........passed
+Then 2. Ürünün listeye eklendiği kontrol edilir.............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Amazon Senaryosu" name="Liste silme" time="4.299">
+<system-out><![CDATA[
+Given Hesabım  Alışveriş Listesi sayfasına gidilir..........................passed
+And Alışveriş Listesi sayfası açıldığı kontrol edilir.......................passed
+And Eklenen ürün Virgosol Liste’sinden silinir..............................passed
+Then Silme işleminin gerçekleştiği kontrol edilir...........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Amazon Senaryosu" name="Logout" time="1.106">
+<system-out><![CDATA[
+Given Üye çıkış işlemi yapılır..............................................passed
+Then Çıkış işleminin yapıldığı kontrol edilir...............................passed
 ]]></system-out>
 </testcase>
 </testsuite>
