@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
                     "junit:src/test/resources/features/htmlReport/cucumber.xml",
                     "rerun:TestOutput/failed_scenario.txt",
                     //rerun hata veren testleri kaydedip yeniden otomatik kosmak icin
-                    // "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+                    //"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
             },
             features = "src/test/resources/features",
             glue = "stepDefinitions",
