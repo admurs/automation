@@ -137,7 +137,7 @@ public class amazon_senaryosu_stepDef {
 
     @Given("Üye çıkış işlemi yapılır.")
     public void uyeCıkısIslemiYapılır() {
-        ReusableMethods.moveToElement(amazonsenaryosupage.loginBar);
+        ReusableMethods.hover(amazonsenaryosupage.loginBar);
         amazonsenaryosupage.cikisYap.click();
     }
 
